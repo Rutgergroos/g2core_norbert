@@ -88,7 +88,7 @@
 
 #define M1_MOTOR_MAP                AXIS_X                  // 1ma
 #define M1_STEP_ANGLE               1.8                     // 1sa
-#define M1_TRAVEL_PER_REV           40.00                   // 1tr
+#define M1_TRAVEL_PER_REV           3.333333				// 1tr
 #define M1_MICROSTEPS               8                       // 1mi  1,2,4,8,16,32
 #define M1_POLARITY                 0                       // 1po  0=normal, 1=reversed
 #define M1_POWER_MODE               MOTOR_POWER_MODE        // 1pm  TRUE=low power idle enabled
@@ -96,7 +96,7 @@
 
 #define M2_MOTOR_MAP                AXIS_Y
 #define M2_STEP_ANGLE               1.8
-#define M2_TRAVEL_PER_REV           40.00
+#define M2_TRAVEL_PER_REV           5
 #define M2_MICROSTEPS               8
 #define M2_POLARITY                 0
 #define M2_POWER_MODE               MOTOR_POWER_MODE
@@ -104,7 +104,7 @@
 
 #define M3_MOTOR_MAP                AXIS_Z
 #define M3_STEP_ANGLE               1.8
-#define M3_TRAVEL_PER_REV           1.25
+#define M3_TRAVEL_PER_REV           5
 #define M3_MICROSTEPS               8
 #define M3_POLARITY                 0
 #define M3_POWER_MODE               MOTOR_POWER_MODE
@@ -112,32 +112,32 @@
 
 // *** axis settings **********************************************************************************
 
-#define JERK_MAX                    5000
+#define JERK_MAX                    500
 
 #define X_AXIS_MODE                 AXIS_STANDARD           // xam  see canonical_machine.h cmAxisMode for valid values
-#define X_VELOCITY_MAX              50000                   // xvm  G0 max velocity in mm/min
+#define X_VELOCITY_MAX              5000                   // xvm  G0 max velocity in mm/min
 #define X_FEEDRATE_MAX              X_VELOCITY_MAX          // xfr  G1 max feed rate in mm/min
 #define X_TRAVEL_MIN                0                       // xtn  minimum travel for soft limits
-#define X_TRAVEL_MAX                420                     // xtm  travel between switches or crashes
+#define X_TRAVEL_MAX                720                     // xtm  travel between switches or crashes
 #define X_JERK_MAX                  JERK_MAX                // xjm  jerk * 1,000,000
-#define X_JERK_HIGH_SPEED           20000                   // xjh
+#define X_JERK_HIGH_SPEED           2000                    // xjh
 #define X_HOMING_INPUT              1                       // xhi  input used for homing or 0 to disable
 #define X_HOMING_DIRECTION          0                       // xhd  0=search moves negative, 1= search moves positive
-#define X_SEARCH_VELOCITY           3000                    // xsv  minus means move to minimum switch
+#define X_SEARCH_VELOCITY           2000                    // xsv  minus means move to minimum switch
 #define X_LATCH_VELOCITY            100                     // xlv  mm/min
 #define X_LATCH_BACKOFF             4                       // xlb  mm
 #define X_ZERO_BACKOFF              2                       // xzb  mm
 
 #define Y_AXIS_MODE                 AXIS_STANDARD
-#define Y_VELOCITY_MAX              50000
+#define Y_VELOCITY_MAX              5000
 #define Y_FEEDRATE_MAX              Y_VELOCITY_MAX
 #define Y_TRAVEL_MIN                0
-#define Y_TRAVEL_MAX                420
+#define Y_TRAVEL_MAX                520
 #define Y_JERK_MAX                  JERK_MAX
-#define Y_JERK_HIGH_SPEED           20000
+#define Y_JERK_HIGH_SPEED           2000
 #define Y_HOMING_INPUT              3
 #define Y_HOMING_DIRECTION          0
-#define Y_SEARCH_VELOCITY           3000
+#define Y_SEARCH_VELOCITY           2000
 #define Y_LATCH_VELOCITY            100
 #define Y_LATCH_BACKOFF             4
 #define Y_ZERO_BACKOFF              2
@@ -176,37 +176,37 @@
 */
 // Xmin on v9 board
 #define DI1_MODE                    NORMALLY_CLOSED
-//#define DI1_ACTION                  INPUT_ACTION_STOP
-#define DI1_ACTION                  INPUT_ACTION_NONE
+#define DI1_ACTION                  INPUT_ACTION_STOP
+//#define DI1_ACTION                  INPUT_ACTION_NONE
 #define DI1_FUNCTION                INPUT_FUNCTION_LIMIT
 
 // Xmax
 #define DI2_MODE                    NORMALLY_CLOSED
-//#define DI2_ACTION                  INPUT_ACTION_STOP
-#define DI2_ACTION                  INPUT_ACTION_NONE
+#define DI2_ACTION                  INPUT_ACTION_STOP
+//#define DI2_ACTION                  INPUT_ACTION_NONE
 #define DI2_FUNCTION                INPUT_FUNCTION_LIMIT
 
 // Ymin
 #define DI3_MODE                    NORMALLY_CLOSED
-//#define DI3_ACTION                  INPUT_ACTION_STOP
-#define DI3_ACTION                  INPUT_ACTION_NONE
+#define DI3_ACTION                  INPUT_ACTION_STOP
+//#define DI3_ACTION                  INPUT_ACTION_NONE
 #define DI3_FUNCTION                INPUT_FUNCTION_LIMIT
 
 // Ymax
 #define DI4_MODE                    NORMALLY_CLOSED
-//#define DI4_ACTION                  INPUT_ACTION_STOP
-#define DI4_ACTION                  INPUT_ACTION_NONE
+#define DI4_ACTION                  INPUT_ACTION_STOP
+//#define DI4_ACTION                  INPUT_ACTION_NONE
 #define DI4_FUNCTION                INPUT_FUNCTION_LIMIT
 
 // Zmin
 #define DI5_MODE                    IO_ACTIVE_HIGH   // Z probe
-#define DI5_ACTION                  INPUT_ACTION_NONE
+#define DI5_ACTION                  INPUT_ACTION_STOP
 #define DI5_FUNCTION                INPUT_FUNCTION_NONE
 
 // Zmax
 #define DI6_MODE                    NORMALLY_CLOSED
-//#define DI6_ACTION                  INPUT_ACTION_STOP
-#define DI6_ACTION                  INPUT_ACTION_NONE
+#define DI6_ACTION                  INPUT_ACTION_STOP
+//#define DI6_ACTION                  INPUT_ACTION_NONE
 #define DI6_FUNCTION                INPUT_FUNCTION_LIMIT
 
 // Amin
